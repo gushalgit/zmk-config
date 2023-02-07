@@ -14,18 +14,6 @@
 #define NAV  2
 
 / {
-    behaviors {
-        #include "morph/shared.dtsi"
-
-        #include "morph/base.dtsi"
-        #include "morph/actions.dtsi"
-        #include "morph/num.dtsi"
-        #include "morph/dev.dtsi"
-
-        #include "hold/shared.dtsi"
-        #include "hold/actions.dtsi"
-        #include "hold/dev.dtsi"
-    };
 
     keymap {
         compatible = "zmk,keymap";
