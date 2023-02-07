@@ -9,63 +9,66 @@
 #include <dt-bindings/zmk/bt.h>
 
 /* Layers */
+
 #define BAS  0
 #define NUM  1
 #define NAV  2
 
 / {
-
     keymap {
         compatible = "zmk,keymap";
 
         base_layer {
-                label = "BAS";
-// -----------------------------------------------------------------------------------------
-// |  TAB   |  Q  |  W  |  F  |  B    |  P  |   |  J  |   L     |  U  |  Y  |  ;  | ESC   |
-// | CTL BS |  A  |  R  |  S  | SLR T |  G  |   |  M  | SLL N   |  E  |  I  |  O  |  '    |
-// |  SHFT  |  Z  |  X  |  C  |  D    |  V  |   |  K  |   H     |  ,  |  .  |  /  | ALT U |
-//                        | GUI | RET | RSE |   | LWR | LSH SPC | ALT |
-//
-// &hm LCTRL BSPC &kp A &kp R &kp S &hm SYMR_L T  &kp G     &kp M  &hm SYML_L N  &kp E  &kp I  &kp O  &hm LCTRL SQT
+            label = "BAS";
 
-                bindings = <
-   &kp TAB        &kp Q &kp W &kp F &kp B         &kp P     &kp J  &kp L         &kp U  &kp Y  &kp SEMI  &kp ESC
-   &hm LCTRL BSPC &kp A &kp R &kp S &kp T         &kp G     &kp M  &kp N         &kp E  &kp I  &kp O  &hm LCTRL SQT
-   &sk LSHFT      &kp Z &kp X &kp C &kp D         &kp V     &kp K  &kp H         &kp COMMA &kp DOT &kp FSLH &kp LA(U)
-                  &kp LCMD &kp RET &mo NAV                  &mo NUM  &hm LSHFT SPACE &kp LALT
-                >;
+            // -----------------------------------------------------------------------------------------
+            // |  TAB   |  Q  |  W  |  F  |  B    |  P  |   |  J  |   L     |  U  |  Y  |  ;  | ESC   |
+            // | CTL BS |  A  |  R  |  S  | SLR T |  G  |   |  M  | SLL N   |  E  |  I  |  O  |  '    |
+            // |  SHFT  |  Z  |  X  |  C  |  D    |  V  |   |  K  |   H     |  ,  |  .  |  /  | ALT U |
+            //                        | GUI | RET | RSE |   | LWR | LSH SPC | ALT |
+            //
+            // &hm LCTRL BSPC &kp A &kp R &kp S &hm SYMR_L T  &kp G     &kp M  &hm SYML_L N  &kp E  &kp I  &kp O  &hm LCTRL SQT
+
+            bindings = <
+       &kp TAB  &kp Q  &kp W     &kp F    &kp B  &kp P  &kp J            &kp L      &kp U    &kp Y  &kp SEMI        &kp ESC
+&mt LCTRL BSPC  &kp A  &kp R     &kp S    &kp T  &kp G  &kp M            &kp N      &kp E    &kp I     &kp O  &mt LCTRL SQT
+     &sk LSHFT  &kp Z  &kp X     &kp C    &kp D  &kp V  &kp K            &kp H  &kp COMMA  &kp DOT  &kp FSLH      &kp LA(U)
+                              &kp LCMD  &kp RET  &mo 2  &mo 1  &mt LSHFT SPACE   &kp LALT
+            >;
         };
 
         number_layer {
-                label = "NUM";
-// -----------------------------------------------------------------------------------------
-// |  F1  |  F2 |  7  |  8  |  9  |  -  |   |     |     |     |     |     | ESC |
-// |      |  0  |  1  |  2  |  3  |  +  |   |     | LFT | DWN |  UP | RGT |     |
-// | SHFT | ENT |  4  |  5  |  6  |  .  |   |     |     |     |     |     |     |
-//                    | GUI | RET |     |   |     | SPC | ALT |
+            label = "NUM";
 
-                bindings = <
-   &kp F1     &kp F2     &kp N7    &kp N8    &kp N9    &kp MINUS    &none  &none  &none  &none  &none  &trans
-   &trans     &kp N0     &kp N1    &kp N2    &kp N3    &kp PLUS     &none  &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans
-   &kp LSHFT  &kp RET    &kp N4    &kp N5    &kp N6    &kp DOT      &trans  &trans  &trans  &trans  &trans  &trans
-                       &kp LCMD    &kp RET  &none                  &none  &hm LSHFT SPACE &kp LALT
-                >;
+            // -----------------------------------------------------------------------------------------
+            // |  F1  |  F2 |  7  |  8  |  9  |  -  |   |     |     |     |     |     | ESC |
+            // |      |  0  |  1  |  2  |  3  |  +  |   |     | LFT | DWN |  UP | RGT |     |
+            // | SHFT | ENT |  4  |  5  |  6  |  .  |   |     |     |     |     |     |     |
+            //                    | GUI | RET |     |   |     | SPC | ALT |
+
+            bindings = <
+   &kp F1   &kp F2  &kp N7    &kp N8   &kp N9  &kp MINUS   &none     &none     &none   &none      &none  &trans
+   &trans   &kp N0  &kp N1    &kp N2   &kp N3   &kp PLUS   &none  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+&kp LSHFT  &kp RET  &kp N4    &kp N5   &kp N6    &kp DOT  &trans    &trans    &trans  &trans     &trans  &trans
+                            &kp LCMD  &kp RET      &none   &none    &trans  &kp LALT
+            >;
         };
 
         navigation_layer {
-                label = "NAV";
-// -----------------------------------------------------------------------------------------
-// |  |       |     |     |     |   |   |                |  ALT CTRL SHFT J  |  ALT CTRL SHFT  |  ALT CTRL SHFT  |            |   |
-// |  | BTCLR | BT0 | BT1 | BT2 |   |   | ALT SHFT SPACE |      LFT          |      DWN        |      UP         |     RGT    |   |
-// |  |       |     |     |     |   |   |                |  ALT SHFT N       |  ALT SHFT M     |  ALT SHFT RET   | ALT SHFT O |   | 
-//                      | GUI | RET |   |   | SPC | ALT |
+            label = "NAV";
 
-                bindings = <
-   &kp TAB   &kp EXCL   &kp AT       &kp HASH     &kp DLLR     &kp PRCNT      &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &trans    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans         &trans   &trans   &trans   &trans   &trans   &trans  
-   &kp LSHFT &trans     &trans       &trans       &trans       &trans         &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LCMD &kp RET   &none      &none   &kp SPACE &kp LALT
-                >;
+            // -----------------------------------------------------------------------------------------
+            // |  |       |     |     |     |   |   |                |  ALT CTRL SHFT J  |  ALT CTRL SHFT  |  ALT CTRL SHFT  |            |   |
+            // |  | BTCLR | BT0 | BT1 | BT2 |   |   | ALT SHFT SPACE |      LFT          |      DWN        |      UP         |     RGT    |   |
+            // |  |       |     |     |     |   |   |                |  ALT SHFT N       |  ALT SHFT M     |  ALT SHFT RET   | ALT SHFT O |   | 
+            //                      | GUI | RET |   |   | SPC | ALT |
+
+            bindings = <
+  &kp TAB    &kp EXCL        &kp AT      &kp HASH      &kp DLLR  &kp PRCNT  &kp CARET   &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR   &kp BSPC
+   &trans  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &trans     &trans     &trans           &trans    &trans    &trans     &trans
+&kp LSHFT      &trans        &trans        &trans        &trans     &trans  &kp UNDER   &kp PLUS         &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
+                                         &kp LCMD       &kp RET      &none      &none  &kp SPACE         &kp LALT
+            >;
         };
     };
 };
