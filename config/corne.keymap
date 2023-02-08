@@ -15,6 +15,16 @@
 #define NAV  2
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_winmed {
+            bindings = <&to 5>;
+            key-positions = <10 11>;
+            layers = <0>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -31,9 +41,9 @@
 
             bindings = <
        &kp TAB  &kp Q  &kp W     &kp F    &kp B  &kp P  &kp J            &kp L      &kp U    &kp Y  &kp SEMI        &kp ESC
-&mt LCTRL BSPC  &kp A  &kp R     &kp S    &kp T  &kp G  &kp M            &kp N      &kp E    &kp I     &kp O  &mt LCTRL SQT
+&mt LCTRL BSPC  &kp A  &kp R     &kp S  &lt 4 T  &kp G  &kp M          &lt 3 N      &kp E    &kp I     &kp O  &mt LCTRL SQT
      &sk LSHFT  &kp Z  &kp X     &kp C    &kp D  &kp V  &kp K            &kp H  &kp COMMA  &kp DOT  &kp FSLH      &kp LA(U)
-                              &kp LGUI  &kp RET  &mo NAV  &mo NUM  &mt LSHFT SPACE   &kp LALT
+                              &kp LGUI  &kp RET  &mo 2  &mo 1  &mt LSHFT SPACE   &kp LALT
             >;
         };
 
@@ -47,10 +57,10 @@
             //                    | GUI | RET |     |   |     | SPC | ALT |
 
             bindings = <
-   &kp F1   &kp F2  &kp N7    &kp N8   &kp N9  &kp MINUS   &none     &none     &none   &none      &none  &trans
-   &trans   &kp N0  &kp N1    &kp N2   &kp N3   &kp PLUS   &none  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
-&kp LSHFT  &kp RET  &kp N4    &kp N5   &kp N6    &kp DOT  &trans    &trans    &trans  &trans     &trans  &trans
-                            &kp LGUI  &kp RET      &none   &none    &mt LSHFT SPACE  &kp LALT
+&kp KP_MULTIPLY  &kp KP_DIVIDE  &kp N7    &kp N8   &kp N9  &kp MINUS   &none            &none     &none   &none      &none  &trans
+         &trans         &kp N0  &kp N1    &kp N2   &kp N3   &kp PLUS   &none         &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+      &kp LSHFT   &kp KP_EQUAL  &kp N4    &kp N5   &kp N6    &kp DOT  &trans           &trans    &trans  &trans     &trans  &trans
+                                        &kp LGUI  &kp RET      &none   &none  &mt LSHFT SPACE  &kp LALT
             >;
         };
 
@@ -64,10 +74,37 @@
             //                      | GUI | RET |   |   | SPC | ALT |
 
             bindings = <
-  &kp TAB    &kp EXCL        &kp AT      &kp HASH      &kp DLLR  &kp PRCNT  &kp CARET   &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR   &kp BSPC
-   &trans  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &trans     &trans     &trans           &trans    &trans    &trans     &trans
-&kp LSHFT      &trans        &trans        &trans        &trans     &trans  &kp UNDER   &kp PLUS         &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
-                                         &kp LGUI       &kp RET      &none      &none  &kp SPACE         &kp LALT
+    &none       &none         &none         &none         &none  &none              &none  &kp LS(LA(LC(J)))  &kp LS(LA(LC(K)))    &kp LS(LA(T))          &none  &none
+    &none  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none  &kp LS(LA(SPACE))           &kp LEFT           &kp DOWN           &kp UP      &kp RIGHT  &none
+&kp LSHFT       &none         &none         &none         &none  &none              &none      &kp LS(LA(N))      &kp LS(LA(M))  &kp LS(LA(RET))  &kp LS(LA(O))  &none
+                                         &kp LGUI       &kp RET  &none              &none          &kp SPACE           &kp LALT
+            >;
+        };
+
+        SYMBOLS_LL {
+            bindings = <
+&none      &none   &kp HASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &none  &none  &none  &none  &none       &none  &none
+&none  &kp CARET  &kp COLON          &kp LPAR           &kp RPAR  &kp STAR  &none  &none  &none  &none  &kp DOLLAR  &none
+&none      &none  &kp PRCNT          &kp LBRC           &kp RBRC     &none  &none  &none  &none  &none       &none  &none
+                                        &none              &none     &none  &none  &none  &none
+            >;
+        };
+
+        SYMBOLS_LR {
+            bindings = <
+&none     &none  &none  &none  &none  &none      &none       &kp AMPS   &kp PIPE          &kp BSLH      &none  &none
+&none  &kp EXCL  &none  &none  &none  &none  &kp GRAVE  &kp LESS_THAN  &kp MINUS  &kp GREATER_THAN  &kp EQUAL  &none
+&none     &none  &none  &none  &none  &none      &none         &kp AT  &kp UNDER         &kp TILDE      &none  &none
+                        &none  &none  &none      &none          &none      &none
+            >;
+        };
+
+        MEDIA_WIN {
+            bindings = <
+&none    &kp C_MUTE  &kp C_PREV  &kp C_PLAY_PAUSE    &kp C_NEXT  &none  &kp LA(LC(U))  &kp LA(LC(I))  &kp LA(LC(E))  &kp LA(LC(C))  &kp LA(LC(T))  &none
+&none  &kp C_VOL_UP       &none             &none  &kp C_BRI_UP  &none  &kp LA(LC(J))  &kp LA(LC(K))  &kp LA(LC(D))  &kp LA(LC(F))  &kp LA(LC(G))  &none
+&none  &kp C_VOL_DN       &none             &none  &kp C_BRI_DN  &none          &none          &none          &none          &none          &none  &none
+                                            &none         &none  &none          &to 0          &none          &none
             >;
         };
     };
