@@ -30,7 +30,6 @@
 
         base_layer {
             label = "BAS";
-
             bindings = <
        &kp TAB  &kp Q  &kp W     &kp F           &kp B        &kp P  &kp J           &kp L         &kp U    &kp Y  &kp SEMI        &kp ESC
 &mt LCTRL BSPC  &kp A  &kp R     &kp S         &lt 4 T        &kp G  &kp M         &lt 3 N         &kp E    &kp I     &kp O  &mt LCTRL SQT
@@ -41,12 +40,11 @@
 
         number_layer {
             label = "NUM";
-
             bindings = <
-&kp KP_MULTIPLY  &kp KP_DIVIDE  &kp N7    &kp N8   &kp N9  &kp MINUS   &none            &none     &none   &none      &none  &trans
-         &trans         &kp N0  &kp N1    &kp N2   &kp N3   &kp PLUS   &none         &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
-      &kp LSHFT   &kp KP_EQUAL  &kp N4    &kp N5   &kp N6    &kp DOT  &trans           &trans    &trans  &trans     &trans  &trans
-                                        &kp LGUI  &kp RET      &none   &none  &mt LSHFT SPACE  &kp LALT
+&kp KP_MULTIPLY  &kp KP_DIVIDE  &kp N7    &kp N8  &kp N9     &kp MINUS   &none           &none     &none   &none      &none  &trans
+         &trans         &kp N0  &kp N1    &kp N2  &kp N3      &kp PLUS   &none        &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+      &kp LSHFT   &kp KP_EQUAL  &kp N4    &kp N5  &kp N6  &kp KP_COMMA  &trans          &trans    &trans  &trans     &trans  &trans
+                                        &kp LGUI  &trans         &none   &none  &mt LALT SPACE    &trans
             >;
         };
 
@@ -60,10 +58,10 @@
             //                      | GUI | RET |   |   | SPC | ALT |
 
             bindings = <
-    &none       &none         &none         &none         &none  &none              &none  &kp LS(LA(LC(J)))  &kp LS(LA(LC(K)))    &kp LS(LA(T))          &none  &none
-    &none  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none  &kp LS(LA(SPACE))           &kp LEFT           &kp DOWN           &kp UP      &kp RIGHT  &none
-&kp LSHFT       &none         &none         &none         &none  &none              &none      &kp LS(LA(N))      &kp LS(LA(M))  &kp LS(LA(RET))  &kp LS(LA(O))  &none
-                                         &kp LGUI       &kp RET  &none              &none          &kp SPACE           &kp LALT
+    &none       &none         &none         &none         &none  &none              &none  &kp LS(LA(LC(J)))  &kp LS(LA(LC(K)))    &kp LS(LA(T))          &none   &none
+    &none  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none  &kp LS(LA(SPACE))           &kp LEFT           &kp DOWN           &kp UP      &kp RIGHT   &none
+&kp LSHFT       &none         &none         &none         &none  &none              &none      &kp LS(LA(N))      &kp LS(LA(M))  &kp LS(LA(RET))  &kp LS(LA(O))  &trans
+                                         &kp LGUI         &none  &none              &none          &kp SPACE           &kp LGUI
             >;
         };
 
