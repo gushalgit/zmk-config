@@ -31,14 +31,6 @@
         base_layer {
             label = "BAS";
 
-            // -----------------------------------------------------------------------------------------
-            // |  TAB   |  Q  |  W  |  F  |  B    |  P  |   |  J  |   L     |  U  |  Y  |  ;  | ESC   |
-            // | CTL BS |  A  |  R  |  S  | SLR T |  G  |   |  M  | SLL N   |  E  |  I  |  O  |  '    |
-            // |  SHFT  |  Z  |  X  |  C  |  D    |  V  |   |  K  |   H     |  ,  |  .  |  /  | ALT U |
-            //                        | GUI | RET | RSE |   | LWR | LSH SPC | ALT |
-            //
-            // &hm LCTRL BSPC &kp A &kp R &kp S &hm SYMR_L T  &kp G     &kp M  &hm SYML_L N  &kp E  &kp I  &kp O  &hm LCTRL SQT
-
             bindings = <
        &kp TAB  &kp Q  &kp W     &kp F           &kp B        &kp P  &kp J           &kp L         &kp U    &kp Y  &kp SEMI        &kp ESC
 &mt LCTRL BSPC  &kp A  &kp R     &kp S         &lt 4 T        &kp G  &kp M         &lt 3 N         &kp E    &kp I     &kp O  &mt LCTRL SQT
@@ -49,12 +41,6 @@
 
         number_layer {
             label = "NUM";
-
-            // -----------------------------------------------------------------------------------------
-            // |  F1  |  F2 |  7  |  8  |  9  |  -  |   |     |     |     |     |     | ESC |
-            // |      |  0  |  1  |  2  |  3  |  +  |   |     | LFT | DWN |  UP | RGT |     |
-            // | SHFT | ENT |  4  |  5  |  6  |  .  |   |     |     |     |     |     |     |
-            //                    | GUI | RET |     |   |     | SPC | ALT |
 
             bindings = <
 &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp N7    &kp N8   &kp N9  &kp MINUS   &none            &none     &none   &none      &none  &trans
