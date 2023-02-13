@@ -31,10 +31,10 @@
         base_layer {
             label = "BAS";
             bindings = <
-       &kp TAB  &kp Q  &kp W     &kp F           &kp B        &kp P  &kp J           &kp L                &kp U    &kp Y  &kp SEMI        &kp ESC
-&mt LCTRL BSPC  &kp A  &kp R     &kp S         &lt 4 T        &kp G  &kp M         &lt 3 N                &kp E    &kp I     &kp O  &mt LCTRL SQT
-     &sk LSHFT  &kp Z  &kp X     &kp C           &kp D        &kp V  &kp K           &kp H            &kp COMMA  &kp DOT  &kp FSLH        &kp RET
-                              &kp LGUI  &kp LEFT_SHIFT  &lt 2 LA(U)  &mo 1  &mt LALT SPACE  &mt LEFT_SHIFT LGUI
+       &kp TAB  &kp Q  &kp W     &kp F           &kp B        &kp P  &kp J           &kp L      &kp U    &kp Y  &kp SEMI        &kp ESC
+&mt LCTRL BSPC  &kp A  &kp R     &kp S         &lt 4 T        &kp G  &kp M         &lt 3 N      &kp E    &kp I     &kp O  &mt LCTRL SQT
+     &sk LSHFT  &kp Z  &kp X     &kp C           &kp D        &kp V  &kp K           &kp H  &kp COMMA  &kp DOT  &kp FSLH   &mt LGUI RET
+                              &kp LGUI  &kp LEFT_SHIFT  &lt 2 LA(U)  &mo 1  &mt LALT SPACE  &kp LSHFT
             >;
         };
 
