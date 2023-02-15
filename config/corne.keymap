@@ -58,10 +58,10 @@
             //                      | GUI | RET |   |   | SPC | ALT |
 
             bindings = <
-    &none       &none         &none         &none         &none  &none              &none  &kp LS(LA(LC(J)))  &kp LS(LA(LC(K)))    &kp LS(LA(T))          &none   &none
-    &none  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none  &kp LS(LA(SPACE))           &kp LEFT           &kp DOWN           &kp UP      &kp RIGHT   &none
-&kp LSHFT       &none         &none         &none         &none  &none              &none      &kp LS(LA(N))      &kp LS(LA(M))  &kp LS(LA(RET))  &kp LS(LA(O))  &trans
-                                        &kp LGUI  &trans      &none   &none  &mt LALT SPACE    &trans
+    &none  &none  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2              &none  &kp LS(LA(LC(J)))  &kp LS(LA(LC(K)))    &kp LS(LA(T))          &none   &none
+    &none  &none       &none         &none         &none         &none  &kp LS(LA(SPACE))           &kp LEFT           &kp DOWN           &kp UP      &kp RIGHT   &none
+&kp LSHFT  &none       &none         &none         &none         &none              &none      &kp LS(LA(N))      &kp LS(LA(M))  &kp LS(LA(RET))  &kp LS(LA(O))  &trans
+                                  &kp LGUI        &trans         &none              &none     &mt LALT SPACE             &trans
             >;
         };
 
