@@ -51,14 +51,8 @@
         navigation_layer {
             label = "NAV";
 
-            // -----------------------------------------------------------------------------------------
-            // |  |       |     |     |     |   |   |                |  ALT CTRL SHFT J  |  ALT CTRL SHFT  |  ALT CTRL SHFT  |            |   |
-            // |  | BTCLR | BT0 | BT1 | BT2 |   |   | ALT SHFT SPACE |      LFT          |      DWN        |      UP         |     RGT    |   |
-            // |  |       |     |     |     |   |   |                |  ALT SHFT N       |  ALT SHFT M     |  ALT SHFT RET   | ALT SHFT O |   | 
-            //                      | GUI | RET |   |   | SPC | ALT |
-
             bindings = <
-    &none  &none  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2              &none  &kp LS(LA(LC(J)))  &kp LS(LA(LC(K)))    &kp LS(LA(T))          &none   &none
+    &none  &none       &none         &none         &none         &none              &none  &kp LS(LA(LC(J)))  &kp LS(LA(LC(K)))    &kp LS(LA(T))          &none   &none
     &none  &none       &none         &none         &none         &none  &kp LS(LA(SPACE))           &kp LEFT           &kp DOWN           &kp UP      &kp RIGHT   &none
 &kp LSHFT  &none       &none         &none         &none         &none              &none      &kp LS(LA(N))      &kp LS(LA(M))  &kp LS(LA(RET))  &kp LS(LA(O))  &trans
                                   &kp LGUI        &trans         &none              &none     &mt LALT SPACE             &trans
@@ -85,10 +79,10 @@
 
         MEDIA_WIN {
             bindings = <
-&kp TAB    &kp C_MUTE  &kp C_PREV  &kp C_PLAY_PAUSE    &kp C_NEXT  &none  &kp LA(LC(U))  &kp LA(LC(I))  &kp LA(LC(E))  &kp LA(LC(C))  &kp LA(LC(T))   &none
-  &none  &kp C_VOL_UP       &none             &none  &kp C_BRI_UP  &none  &kp LA(LC(J))  &kp LA(LC(K))  &kp LA(LC(D))  &kp LA(LC(F))  &kp LA(LC(G))  &trans
-  &none  &kp C_VOL_DN       &none             &none  &kp C_BRI_DN  &none          &none          &none          &none          &none          &none   &none
-                                             &trans         &none  &none          &to 0          &none         &trans
+&none         &none         &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &kp C_BRI_UP  &kp LA(LC(U))  &kp LA(LC(I))  &kp LA(LC(E))  &kp LA(LC(C))  &kp LA(LC(T))  &none
+&none         &none         &kp C_VOL_DN  &kp C_MUTE        &kp C_VOL_UP  &kp C_BRI_DN  &kp LA(LC(J))  &kp LA(LC(K))  &kp LA(LC(D))  &kp LA(LC(F))  &kp LA(LC(G))  &trans
+&bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4  &none          &none          &none          &none          &none          &none
+                                             &trans         &none         &none         &to 0          &none          &trans
             >;
         };
     };
