@@ -15,6 +15,16 @@
 #define NAV  2
 
 / {
+    behaviors {
+      skq: sticky_key_quick_release {
+        compatible = "zmk,behavior-sticky-key";
+        label = "STICKY_KEY_QUICK_RELEASE";
+        #binding-cells = <1>;
+        bindings = <&kp>;
+        release-after-ms = <1000>;
+        quick-release;
+      };
+
     combos {
         compatible = "zmk,combos";
 
@@ -26,11 +36,11 @@
     };
 
     macros {
-        Auml: Auml {
+        uml: uml_shift {
             compatible = "zmk,behavior-macro";
             label = "new_macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(U) &kp LS(A)>;
+            bindings = <&kp LA(U) &kp LSHFT>;
         };
     };
 
@@ -41,9 +51,9 @@
             label = "BAS";
             bindings = <
         &kp TAB  &kp Q  &kp W     &kp F           &kp B        &kp P       &kp J           &kp L         &kp U    &kp Y  &kp SEMI        &kp ESC
-&mt LCTRL LA(S)  &kp A  &kp R     &kp S         &lt 4 T        &kp G       &kp M         &lt 3 N         &kp E    &kp I     &kp O  &mt LCTRL SQT
+&mt LCTRL LA(S)  &mt &uml A A  &kp R     &kp S         &lt 4 T        &kp G       &kp M         &lt 3 N         &kp E    &kp I     &kp O  &mt LCTRL SQT
       &kp LSHFT  &kp Z  &kp X     &kp C           &kp D        &kp V       &kp K           &kp H     &kp COMMA  &kp DOT  &kp FSLH  &mt LSHFT RET
-                               &kp LGUI  &sk LEFT_SHIFT  &lt 2 LA(U)  &lt 1 BSPC  &mt LALT SPACE  &mt LGUI ESC
+                               &kp LGUI      &skq LSHFT  &lt 2 LA(U)  &lt 1 BSPC  &mt LALT SPACE  &mt LGUI ESC
             >;
         };
 
@@ -87,7 +97,7 @@
 
         MEDIA_WIN {
             bindings = <
-     &none         &none    &kp C_PREV  &kp C_PLAY_PAUSE    &kp C_NEXT  &kp C_BRI_UP  &kp LA(LC(U))  &kp LA(LC(I))  &kp LA(LC(E))  &kp LA(LC(C))  &kp LA(LC(T))   &none
+   &kp TAB         &none    &kp C_PREV  &kp C_PLAY_PAUSE    &kp C_NEXT  &kp C_BRI_UP  &kp LA(LC(U))  &kp LA(LC(I))  &kp LA(LC(E))  &kp LA(LC(C))  &kp LA(LC(T))   &none
      &none         &none  &kp C_VOL_DN        &kp C_MUTE  &kp C_VOL_UP  &kp C_BRI_DN  &kp LA(LC(J))  &kp LA(LC(K))  &kp LA(LC(D))  &kp LA(LC(F))  &kp LA(LC(G))  &trans
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4          &none          &none          &none          &none          &none   &none
                                                   &trans         &none         &none          &to 0          &none         &trans
