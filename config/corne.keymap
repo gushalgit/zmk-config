@@ -24,6 +24,7 @@
         release-after-ms = <1000>;
         quick-release;
       };
+    };
 
     combos {
         compatible = "zmk,combos";
