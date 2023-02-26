@@ -42,7 +42,7 @@
             label = "BAS";
             bindings = <
         &kp TAB  &kp Q  &kp W     &kp F           &kp B        &kp P       &kp J           &kp L         &kp U    &kp Y  &kp SEMI        &kp ESC
-&mt LCTRL LA(S)  &kp A  &kp R     &kp S         &lt 4 T        &kp G       &kp M         &lt 3 N         &kp E    &kp I     &kp O  &mt LCTRL SQT
+        &kp LCTRL &kp A  &kp R     &kp S         &lt 4 T        &kp G       &kp M         &lt 3 N         &kp E    &kp I     &kp O  &mt LCTRL SQT
       &kp LSHFT  &kp Z  &kp X     &kp C           &kp D        &kp V       &kp K           &kp H     &kp COMMA  &kp DOT  &kp FSLH  &mt LSHFT RET
                                &kp LGUI      &skq LSHFT  &lt 2 LA(U)  &lt 1 BSPC  &mt LALT SPACE  &mt LGUI ESC
             >;
